@@ -68,15 +68,13 @@ Frontend: https://www.figma.com/file/340qhjrLUgFzXHdjgBGQmo/Components-Tree
 | Component              |                               Description                                |
 | ---------------------- | :----------------------------------------------------------------------: |
 | App                    |                      Sets up app with React Router                       |
-| Nav                    | Nav guides to about, home, favorites, register, dashboard, current chats |
+| Nav                    |        Nav guides to about, home, favorites, register, local breaks      |
 | Router                 |                    Contains Switch/Routes for content                    |
 | Footer                 |                           Footer for the page                            |
-| Form Component-editing |             A form which allows users to edit their account              |
 | Form Component-create  |             A form that allows users to create their account             |
 | Messageboardform       |             A form that allows users to type/ send messages              |
-| Dashboard              |                   Component to like, dislike accounts                    |
 | Favorite Spots Page    |                 Page that displays your likes/ favorited surf spots      |
-| About Page             |      Page displays the creators of the App, and their contributions      |
+| About Page             |             Page displays the creator of the app, and its intentions     |
 | Conversations Page     |                Page that shows your current conversations                |
 | Preferences Page       |          Page that lets a user choose their search preferences           |
 | Wave details           |          Shared/Reusable component that renders one users data           |
@@ -89,7 +87,7 @@ User can set up search paramters, and customize their spots.
 # PostMVP
 Direct Messages
 Authentication/ Login
-Automated bot messages
+Automated bot messages for dummy conversations
 
 
 ## Additional Libraries
