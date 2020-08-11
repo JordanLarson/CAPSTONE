@@ -6,7 +6,9 @@ Social media/ surf forecast app that allows users to post on a feed, and search 
 ## Project Link
 
 front-end link: https://github.com/JordanLarson/CAPSTONE
-back-end linK: https://github.com/JordanLarson/CAPSTONE_backend/edit/master/README.md
+
+back-end link: https://github.com/JordanLarson/CAPSTONE_backend/edit/master/README.md
+
 ## Project Description
 A social media/ Surf forecast application that allows users to post on a feed with video, audio or text. 
 Users can add friends and communicate with them directly. 
@@ -24,7 +26,9 @@ desktop: https://www.figma.com/file/9ZaOTLbyYS2xt7bBfjZvfV/SURFLY-DESKTOP?node-i
 ## Frontend/ Backend Architecture
 
 Frontend: https://www.figma.com/file/340qhjrLUgFzXHdjgBGQmo/Components-Tree
+
 Backend: https://www.figma.com/file/QXDLS0peQOEXJ9zLrfTUvj/Untitled?node-id=0%3A1
+
 # USER STORIES
 
 # MVP Matrices
