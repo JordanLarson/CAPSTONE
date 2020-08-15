@@ -14,15 +14,17 @@ import RegisterForm from "./components/Register/RegisterForm";
 
 function App() {
   return (
-    <>
-      <Nav />
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/register" component={RegisterForm} />
-        <Route path="/waves" component={Waves} />
-      </Switch>
-    </>
+    <div className="App">
+      <>
+        <Nav />
+        <Switch>
+          <Route path="/home" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={RegisterForm} />
+          <Route path="/waves" component={Waves} />
+        </Switch>
+      </>
+    </div>
   );
 }
 

@@ -24,7 +24,7 @@ const Waves = (props) => {
     <div>
       <h3>Waves Nearby</h3>
       <button onClick={handleSubmit}>
-        <span>Add To Favorites</span>
+        <span>Add To Your Waves</span>
       </button>
     </div>
   );
