@@ -10,10 +10,10 @@ const RegisterForm = (props) => {
     password: "",
   });
   const [user, setUser] = useState(null);
-  const handleChange = (e) => {
+  const handleRegisterChange = (e) => {
     setInput({
       ...input,
-      [e.target.username]: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
   const handleSubmit = (e) => {
@@ -24,7 +24,7 @@ const RegisterForm = (props) => {
       data: input,
     })
       .then((res) => {
-        console.log("handlesubmit respons is -", res);
+        console.log("handlesubmit response is -", res);
         document.cookie = "username=" + res.data.username;
         setUser({ newUserProfile: res.data });
       })
@@ -38,10 +38,15 @@ const RegisterForm = (props) => {
           type="text"
           value={input.username}
           name="username"
-          onChange={handleChange}
+          onChange={handleRegisterChange}
         />
         <label> Create a Password</label>
-        <input type="text" value={input.password} onChange={handleChange} />
+        <input
+          type="text"
+          value={input.password}
+          name="password"
+          onChange={handleRegisterChange}
+        />
         <br />
         <br />
         <br />

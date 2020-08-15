@@ -13,6 +13,8 @@ const Nav = () => {
       <div className="desk-nav">
         <Link to="/favorites">Favorites</Link>
         <Link to="/login">Login</Link>
+        <Link to="/home">Home</Link>
+        <Link to="/waves">Waves</Link>
       </div>
     </div>
   );

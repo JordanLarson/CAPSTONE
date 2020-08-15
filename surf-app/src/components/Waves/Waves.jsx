@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import cors from "cors";
 
 const Waves = (props) => {
   const [waves, setWaves] = useState("");
@@ -23,6 +25,7 @@ const Waves = (props) => {
   return (
     <div>
       <h3>Waves Nearby</h3>
+      <p>{waves.data}</p>
       <button onClick={handleSubmit}>
         <span>Add To Your Waves</span>
       </button>
