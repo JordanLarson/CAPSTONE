@@ -13,7 +13,6 @@ const Nav = () => {
       <div className="desk-nav">
         <Link to="/favorites">Favorites</Link>
         <Link to="/login">Login</Link>
-        <Link to="/about">About Covid-18+</Link>
       </div>
     </div>
   );
