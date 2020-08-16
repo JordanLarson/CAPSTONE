@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import cors from "cors";
+import Messages from "../Messages/messages";
+import { Link } from "react-router-dom";
 
 const Waves = (props) => {
   const [waves, setWaves] = useState("");
@@ -13,7 +15,7 @@ const Waves = (props) => {
   };
   useEffect(() => {
     const makeApiCall = async () => {
-      const urlData = `http://magicseaweed.com/api/${myKey}/forecast/?spot_id=10`;
+      const urlData = `http://magicseaweed.com/api//forecast/?spot_id=10`;
       const res = await fetch(urlData);
       const data = await res.json();
       console.log(data);
@@ -28,6 +30,9 @@ const Waves = (props) => {
       <button onClick={handleSubmit}>
         <span>Add To Your Waves</span>
       </button>
+      <div className="chat_container">
+        <Link to={`/messages/${spotId}`}>Location Feed</Link>
+      </div>
     </div>
   );
 };
