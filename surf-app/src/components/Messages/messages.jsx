@@ -22,14 +22,14 @@ function Message(props) {
 
   useEffect(() => {
     readSender = document.cookie.split("=")[1];
-    readRecipient = props.match.params.spotId;
+    readRecipient = 291;
     setPostSender(document.cookie.split("=")[1]);
-    setSurfSpot(props.match.params.spotId);
+    setSurfSpot(readRecipient);
   }, []);
   const getNewMessages = async (e) => {
     try {
       const response = await axios(
-        `${apiUrl}/messages?sender=${readSender}&recipient=${readRecipient}`
+        `${apiUrl}/messages?sender=${readSender}&spotId=${readRecipient}`
       );
       setChat(response.data.messages.reverse());
     } catch (err) {
@@ -48,7 +48,7 @@ function Message(props) {
         const jsonBody = {
           message: message,
           sender: postSender,
-          recipient: surfSpot,
+          spotId: surfSpot,
         };
         const response = await axios.post(`${apiUrl}/messages`, jsonBody);
       } catch (err) {
