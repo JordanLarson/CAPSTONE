@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import cors from "cors";
 
-const myKey = "66c79af0fe4e3fb73b3915ea2ef63999";
-
 const Waves = (props) => {
   const [waves, setWaves] = useState("");
   const [favorite, setFavorite] = useState(false);

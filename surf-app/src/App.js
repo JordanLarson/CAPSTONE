@@ -7,10 +7,6 @@ import Login from "./components/Login/Login";
 import Waves from "./components/Waves/Waves";
 import RegisterForm from "./components/Register/RegisterForm";
 
-// APIkey =
-//   "http://magicseaweed.com/api/66c79af0fe4e3fb73b3915ea2ef63999/forecast/?spot_id=10";
-// ("96a6186e-df2f-11ea-9e97-0242ac130002-96a61954-df2f-11ea-9e97-0242ac130002");
-
 function App() {
   return (
     <div className="App">
