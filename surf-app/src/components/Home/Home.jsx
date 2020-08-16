@@ -4,7 +4,7 @@ import Login from "../Login/Login";
 const Home = () => {
   return (
     <div>
-      <h1>FIND THE BEST SURF</h1>
+      <h1>FIND THE BEST WAVES NEAR YOU</h1>
     </div>
   );
 };

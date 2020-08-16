@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Route, Link, Switch } from "react-router-dom";
-import logo from "./logo.svg";
 import Home from "./components/Home/Home";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
