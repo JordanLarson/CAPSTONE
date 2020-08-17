@@ -25,7 +25,7 @@ function Messages(props) {
     const spotId = props.location.pathname.split("/")[2];
     console.log("spotId: " + spotId);
     readSender = document.cookie.split("=")[1];
-    readRecipient = 291;
+    readRecipient = spotId;
     setPostSender(document.cookie.split("=")[1]);
     setSurfSpot(readRecipient);
   }, []);
@@ -51,7 +51,7 @@ function Messages(props) {
         const jsonBody = {
           message: message,
           sender: postSender,
-          spotId: surfSpot,
+          recipient: surfSpot,
         };
         const response = await axios.post(`${apiUrl}/feed`, jsonBody);
       } catch (err) {
@@ -78,8 +78,8 @@ function Messages(props) {
       <h1 className="chat-log-title">Post On Feed</h1>
 
       <div className="render-chat">{renderChat()}</div>
-      <form onSubmit={onMessageSubmit}>
-        <div>
+      <form onSubmit={onMessageSubmit} className="message-form-ctn">
+        <div className="textfield-ctn">
           <TextField
             name="message"
             onChange={(e) => onTextChange(e)}
