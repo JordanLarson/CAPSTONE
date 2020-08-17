@@ -11,6 +11,7 @@ const Waves = (props) => {
   const [solidRating, setSolidRating] = useState("");
   const [wavePeriod, setWavePeriod] = useState("");
   const [swellDirection, setSwellDirection] = useState("");
+  const [windSpeed, setWindSpeed] = useState("");
   const [favorite, setFavorite] = useState(false);
   const [spotId, setSpotId] = useState();
 
@@ -31,6 +32,7 @@ const Waves = (props) => {
       setWaveHeight(data[0].swell.components.combined.height);
       setWavePeriod(data[0].swell.components.combined.period);
       setSwellDirection(data[0].swell.components.combined.compassDirection);
+      setWindSpeed(data[0].wind.speed);
     };
     makeApiCall();
   }, []);
@@ -43,6 +45,7 @@ const Waves = (props) => {
         Swell: {waveHeight} feet at {wavePeriod} seconds -{swellDirection}
       </p>
       <p>Current Water Temp: {waterTemp} farhenheit</p>
+      <p>Wind Speed/Direction: {windSpeed}</p>
       <p>Solid Rating: {solidRating}/5</p>
       <button onClick={handleSubmit}>
         <span>Add To Your Waves</span>

@@ -3,7 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import PropTypes from "prop-types";
-import "./messages.css";
+import "./Messages.css";
 
 const styles = {
   root: {
