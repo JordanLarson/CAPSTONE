@@ -8,7 +8,7 @@ const Home = () => {
       <h1 className="home-header">
         FIND THE BEST <br></br>SURF IN<br></br>YOUR REGION
       </h1>
-      <p>Login</p>
+      <p className="login-ptag">LOGIN TO YOUR ACCOUNT</p>
       <Login />
     </div>
   );

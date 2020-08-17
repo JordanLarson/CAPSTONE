@@ -32,7 +32,7 @@ export default function Login() {
     <div className="Login">
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="username" bsSize="large">
-          <FormLabel>Username</FormLabel>
+          <FormLabel className="login-label">Username</FormLabel>
           <FormControl
             autoFocus
             type="username"
@@ -42,7 +42,7 @@ export default function Login() {
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
-          <FormLabel>Password</FormLabel>
+          <FormLabel className="login-label">Password</FormLabel>
           <FormControl
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -55,7 +55,7 @@ export default function Login() {
           bsSize="large"
           disabled={!validateForm()}
           type="submit"
-          className="register-btn"
+          className="register-button"
         >
           Login
         </Button>
@@ -64,9 +64,9 @@ export default function Login() {
       <br />
       <div className="divider"></div>
       <br />
-      <p>Don't have a profile yet?</p>
+      <p className="create-profile-ptag">Don't have a profile yet?</p>
       <Link to="/register">
-        <button className="register-btn">Create a profile</button>
+        <button className="register-button">Create a profile</button>
       </Link>
     </div>
   );

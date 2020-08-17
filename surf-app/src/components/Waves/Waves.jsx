@@ -62,12 +62,17 @@ const Waves = (props) => {
 
   return (
     <div>
+      <h4 className="wave-component-header">
+        SEARCH FOR <br></br>YOUR OPTIMAL LOCATION
+      </h4>
       <select className="region-dropdown" onChange={handleRegionChange}>
         <option value="Select Region">Select Region</option>
         <option value="Northern California">Northern California</option>
         <option value="San Diego County">San Diego County</option>
       </select>
-      <p className="wave-height-slider">Wave Height {waveHeight}</p>
+      <p className="wave-height-slider">
+        Select Your Desired Wave Height {waveHeight}
+      </p>
       <input
         id="wave-height-slider"
         type="range"
@@ -87,7 +92,9 @@ const Waves = (props) => {
         half={false}
         color2={"#ffd700"}
       />
-      <h3 className="spots-header">Spots In Your Region</h3>
+      <h3 className="spots-header">
+        Spots In Your Region<br></br>That Fit Your Criteria
+      </h3>
       <ul style={{ textDecoration: "none" }} className="render-spots">
         {renderSpots()}
       </ul>

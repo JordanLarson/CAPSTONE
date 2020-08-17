@@ -5,8 +5,14 @@ const Footer = () => {
   return (
     <footer>
       <p>
-        © 2020 TrueSurf | <Link to="/login">Login </Link> |{" "}
-        <Link to="/waves">Find Surf Nearby</Link>
+        © 2020 TrueSurf |{" "}
+        <Link className="footer-login-link" to="/login">
+          Login{" "}
+        </Link>{" "}
+        |{" "}
+        <Link className="footer-waves-link" to="/waves">
+          Find Surf Nearby
+        </Link>
       </p>
     </footer>
   );

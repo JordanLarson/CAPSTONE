@@ -17,16 +17,16 @@ const Nav = () => {
           return matches ? (
             <div className="main-nav">
               <Link className="favorites-link" to="/favorites">
-                Favorites
+                FAVORITES
               </Link>
               <Link className="login-link" to="/login">
-                Login
+                LOGIN
               </Link>
               <Link className="home-link" to="/home">
-                Home
+                HOME
               </Link>
               <Link className="waves-link" to="/waves">
-                Waves
+                LOCATIONS
               </Link>
             </div>
           ) : (

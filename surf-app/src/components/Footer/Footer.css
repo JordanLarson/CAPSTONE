@@ -3,4 +3,19 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 90vh;
+  font-size: 15px;
+  color: white;
+  background-color: #003459;
+}
+.footer-login-link {
+  color: white;
+}
+.footer-waves-link {
+  color: white;
+}
+.footer-login-link:hover {
+  color: #00a8e8;
+}
+.footer-waves-link:hover {
+  color: #00a8e8;
 }

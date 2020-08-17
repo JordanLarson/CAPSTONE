@@ -9,16 +9,16 @@ const MobileNav = ({ open, handleNav }) => {
         x
       </h4>
       <Link className="favorites-mob" to="/favorites" onClick={handleNav}>
-        Favorites
+        FAVORITES
       </Link>
       <Link className="login-mob" to="/login" onClick={handleNav}>
-        Login
+        LOGIN
       </Link>
       <Link className="home-mob" to="/home" onClick={handleNav}>
-        Home
+        HOME
       </Link>
       <Link className="waves-mob" to="/waves" onClick={handleNav}>
-        Waves
+        WAVES
       </Link>
     </div>
   ) : (
