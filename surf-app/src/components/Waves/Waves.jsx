@@ -1,59 +1,96 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import cors from "cors";
 import { Link } from "react-router-dom";
+import apiUrl from "../apiConfig";
+import ReactStars from "react-stars";
+import "./Waves.css";
 
 const Waves = (props) => {
-  const [maxWaveHeight, setMaxWaveHeight] = useState("");
-  const [minWaveHeight, setMinWaveHeight] = useState("");
-  const [waveHeight, setWaveHeight] = useState("");
-  const [waterTemp, setWaterTemp] = useState("");
-  const [solidRating, setSolidRating] = useState("");
-  const [wavePeriod, setWavePeriod] = useState("");
-  const [swellDirection, setSwellDirection] = useState("");
-  const [windSpeed, setWindSpeed] = useState("");
-  const [favorite, setFavorite] = useState(false);
-  const [spotId, setSpotId] = useState();
+  const [spots, setSpots] = useState({});
+  const [region, setRegion] = useState("");
+  const [waveHeight, setWaveHeight] = useState(null);
+  const [stars, setStars] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFavorite(true);
-  };
   useEffect(() => {
+    let urlData = `${apiUrl}/spots?region=${region}`;
+    if (waveHeight != null) {
+      urlData += `&waveHeight=${waveHeight}`;
+    }
+    if (stars != null) {
+      urlData += `&stars=${stars}`;
+    }
+
     const makeApiCall = async () => {
-      const urlData = `http://magicseaweed.com/api/66c79af0fe4e3fb73b3915ea2ef63999/forecast/?spot_id=291`;
       const res = await fetch(urlData);
       const data = await res.json();
-      console.log(data[0]);
-      setMaxWaveHeight(data[0].swell.absMaxBreakingHeight);
-      setMinWaveHeight(data[0].swell.absMinBreakingHeight);
-      setWaterTemp(data[0].condition.temperature);
-      setSolidRating(data[0].solidRating);
-      setWaveHeight(data[0].swell.components.combined.height);
-      setWavePeriod(data[0].swell.components.combined.period);
-      setSwellDirection(data[0].swell.components.combined.compassDirection);
-      setWindSpeed(data[0].wind.speed);
+      setSpots(data);
     };
     makeApiCall();
-  }, []);
+  }, [region, waveHeight, stars]);
+
+  const handleWaveHeightChange = (e) => {
+    e.preventDefault();
+
+    setWaveHeight(e.target.value);
+    console.log(waveHeight);
+  };
+
+  const handleRegionChange = (e) => {
+    e.preventDefault();
+    setRegion(e.target.value);
+    console.log(region);
+  };
+
+  const handleStarsChange = (e) => {
+    if (stars === e) {
+      setStars(null);
+    } else {
+      setStars(e);
+    }
+  };
+
+  const renderSpots = () => {
+    if (spots == null || spots[0] == null) {
+      return;
+    }
+
+    return spots.map((spot) => (
+      <div key={spot.id}>
+        <Link to={`/messages/${spot.id}`}>{spot.name}</Link>
+      </div>
+    ));
+  };
+
   return (
     <div>
-      <h3>Waves Nearby</h3>
-      <p>Maximum wave height: {maxWaveHeight} feet</p>
-      <p>Minimum Wave Height: {minWaveHeight} feet</p>
-      <p>
-        Swell: {waveHeight} feet at {wavePeriod} seconds -{swellDirection}
-      </p>
-      <p>Current Water Temp: {waterTemp} farhenheit</p>
-      <p>Wind Speed/Direction: {windSpeed}</p>
-      <p>Solid Rating: {solidRating}/5</p>
-      <button onClick={handleSubmit}>
-        <span>Add To Your Waves</span>
-        {/* <p>data[1].swell.absMaxBreakingHeight</p> */}
-      </button>
-      <div className="chat_container">
-        <Link to={`/messages/291`}>Location Feed</Link>
-      </div>
+      <select onChange={handleRegionChange}>
+        <option value="Select Region">Select Region</option>
+        <option value="Northern California">Northern California</option>
+        <option value="San Diego County">San Diego County</option>
+      </select>
+      <p className="wave-height-slider">Wave Height {waveHeight}</p>
+      <input
+        id="wave-height-slider"
+        type="range"
+        min="0"
+        max="20"
+        value={waveHeight}
+        onChange={handleWaveHeightChange}
+        step="1"
+      />
+      {/* https://github.com/n49/react-stars */}
+      <ReactStars
+        className="react-stars"
+        count={5}
+        value={stars}
+        onChange={handleStarsChange}
+        size={24}
+        half={false}
+        color2={"#ffd700"}
+      />
+      <h3 className="spots-header">Spots In Your Region</h3>
+      <ul style={{ textDecoration: "none" }} className="render-spots">
+        {renderSpots()}
+      </ul>
     </div>
   );
 };

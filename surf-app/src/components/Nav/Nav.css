@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+.desk-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  color: #00171f;
+}
+.desk-nav a:hover {
+  color: #00a8e8;
+}
+.login-link {
+  text-decoration: none;
+  color: #00171f;
+  font-family: "Russo One", sans-serif;
+}
+.favorites-link {
+  text-decoration: none;
+  color: #00171f;
+  font-family: "Russo One", sans-serif;
+}
+.home-link {
+  text-decoration: none;
+  color: #00171f;
+  font-family: "Russo One", sans-serif;
+}
+.home-link a:hover {
+  color: white;
+}
+.waves-link {
+  text-decoration: none;
+  color: #00171f;
+  font-family: "Russo One", sans-serif;
+}

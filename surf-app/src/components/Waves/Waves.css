@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&family=Russo+One&display=swap");
+ul > .render-spots {
+  text-decoration: none !important;
+  list-style: none;
+  color: black;
+}
+a {
+  text-decoration: none;
+  color: #00171f;
+  font-family: "Libre Franklin", sans-serif;
+}
+a :hover {
+  color: #00a8e8;
+}
+
+.spots-header {
+  font-family: "Libre Franklin", sans-serif;
+  color: #00171f;
+}
+.react-stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.wave-height-slider {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: bolder;
+}
