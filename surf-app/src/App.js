@@ -6,6 +6,7 @@ import Nav from "./components/Nav/Nav";
 import Login from "./components/Login/Login";
 import Waves from "./components/Waves/Waves";
 import RegisterForm from "./components/Register/RegisterForm";
+import Messages from "./components/Messages/Messages";
 
 function App() {
   return (
@@ -13,10 +14,11 @@ function App() {
       <>
         <Nav />
         <Switch>
-          <Route path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={RegisterForm} />
           <Route path="/waves" component={Waves} />
+          <Route path="/messages" component={Messages} />
         </Switch>
       </>
     </div>

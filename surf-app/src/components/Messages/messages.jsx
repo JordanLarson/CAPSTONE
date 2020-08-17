@@ -3,7 +3,8 @@ import TextField from "@material-ui/core/TextField";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import "./messages.css";
+
 const styles = {
   root: {
     background: "gray",
@@ -12,7 +13,7 @@ const styles = {
     color: "blue",
   },
 };
-function Message(props) {
+function Messages(props) {
   const [state, setState] = useState({ message: "", username: "" });
   const [chat, setChat] = useState([]);
   const [postSender, setPostSender] = useState("");
@@ -21,6 +22,8 @@ function Message(props) {
   let readRecipient = "";
 
   useEffect(() => {
+    const spotId = props.location.pathname.split("/")[2];
+    console.log("spotId: " + spotId);
     readSender = document.cookie.split("=")[1];
     readRecipient = 291;
     setPostSender(document.cookie.split("=")[1]);
@@ -37,25 +40,25 @@ function Message(props) {
     }
   };
   const onTextChange = (e) => {
-    setState({ ...state, [e.target.username]: e.target.value });
+    setState({ ...state, [e.target.name]: e.target.value });
   };
   const onMessageSubmit = (e) => {
     e.preventDefault();
     const { name, message } = state;
 
-    const postMessage = async (message) => {
+    const postMessageAPI = async (message) => {
       try {
         const jsonBody = {
           message: message,
           sender: postSender,
           spotId: surfSpot,
         };
-        const response = await axios.post(`${apiUrl}/messages`, jsonBody);
+        const response = await axios.post(`${apiUrl}/feed`, jsonBody);
       } catch (err) {
         console.error(err);
       }
     };
-    postMessage(message);
+    postMessageAPI(message);
 
     setState({ message: "", name });
   };
@@ -71,10 +74,10 @@ function Message(props) {
   };
   const { classes } = props;
   return (
-    <div>
-      <h1>Post On Feed</h1>
+    <div className="message-card">
+      <h1 className="chat-log-title">Post On Feed</h1>
 
-      <div>{renderChat()}</div>
+      <div className="render-chat">{renderChat()}</div>
       <form onSubmit={onMessageSubmit}>
         <div>
           <TextField
@@ -85,10 +88,10 @@ function Message(props) {
             variant="filled"
             label="Message"
             color="secondary"
-            className={classes.root}
-            InputProps={{
-              className: classes.input,
-            }}
+            // className={classes.root}
+            // InputProps={{
+            //   className: classes.input,
+            // }}
           />
         </div>
         <button className="postButton">Post</button>
@@ -96,7 +99,7 @@ function Message(props) {
     </div>
   );
 }
-Message.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-export default withStyles(styles)(Message);
+// Messages.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
+export default Messages;

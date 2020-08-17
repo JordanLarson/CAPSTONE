@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import cors from "cors";
-import Messages from "../Messages/messages";
 import { Link } from "react-router-dom";
 
 const Waves = (props) => {
@@ -31,7 +30,7 @@ const Waves = (props) => {
         <span>Add To Your Waves</span>
       </button>
       <div className="chat_container">
-        <Link to={`/messages/291`}>Location Feed</Link>
+        <Link to={`/messages/`}>Location Feed</Link>
       </div>
     </div>
   );
