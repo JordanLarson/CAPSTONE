@@ -16,25 +16,32 @@ const styles = {
 function Messages(props) {
   const [state, setState] = useState({ message: "", username: "" });
   const [chat, setChat] = useState([]);
-  const [postSender, setPostSender] = useState("");
+  const [sender, setSender] = useState("");
+  const [spotId, setSpotId] = useState(0);
   const [surfSpot, setSurfSpot] = useState("");
-  let readSender = "";
-  let readRecipient = "";
+  let globalSpotId = 0;
+  let globalSender = "";
+
+  console.log("props: " + props);
 
   useEffect(() => {
-    const spotId = props.location.pathname.split("/")[2];
-    console.log("spotId: " + spotId);
-    readSender = document.cookie.split("=")[1];
-    readRecipient = spotId;
-    setPostSender(document.cookie.split("=")[1]);
-    setSurfSpot(readRecipient);
+    globalSpotId = props.location.pathname.split("/")[2];
+    globalSender = document.cookie.split("=")[1];
+    setSpotId(globalSpotId);
+    setSender(globalSender);
+
+    const interval = setInterval(() => getNewMessages(spotId), 1000);
+
+    return function cleanup() {
+      console.log("use effect cleanup was called");
+      clearInterval(interval);
+    };
   }, []);
-  const getNewMessages = async (e) => {
+  const getNewMessages = async (theSpot) => {
     try {
-      const response = await axios(
-        `${apiUrl}/messages?sender=${readSender}&spotId=${readRecipient}`
-      );
-      setChat(response.data.messages.reverse());
+      const response = await axios(`${apiUrl}/feed?spotId=${globalSpotId}`);
+      console.log(JSON.stringify(response));
+      setChat(response.data.feed.reverse());
     } catch (err) {
       console.error(err);
     }
@@ -50,8 +57,8 @@ function Messages(props) {
       try {
         const jsonBody = {
           message: message,
-          sender: postSender,
-          recipient: surfSpot,
+          sender: sender,
+          spotId: spotId,
         };
         const response = await axios.post(`${apiUrl}/feed`, jsonBody);
       } catch (err) {
