@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
+import "./RegisterForm.css";
 
 const RegisterForm = (props) => {
   const history = useHistory();
@@ -32,19 +33,26 @@ const RegisterForm = (props) => {
   };
   return (
     <>
+      <div>
+        <h3 className="create-header">Create An Account</h3>
+      </div>
       <form onSubmit={handleSubmit} className="registration-form">
-        <label>Choose a Username</label>
+        <label className="username-label">Choose a Username</label>
         <input
+          className="username-container"
           type="text"
           value={input.username}
           name="username"
+          placeholder="username"
           onChange={handleRegisterChange}
         />
-        <label> Create a Password</label>
+        <label className="password-label"> Create a Password</label>
         <input
+          className="password-container"
           type="text"
           value={input.password}
           name="password"
+          placeholder="password"
           onChange={handleRegisterChange}
         />
         <br />

@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+.home-header {
+  margin-top: 50px;
+  font-family: "Russo One", sans-serif;
+  color: #00171f;
+  border-bottom: 10px #00171f;
+}
+@media only screen and (max-width: 768px) {
+  .home-header {
+    font-size: 20px;
+  }
+}

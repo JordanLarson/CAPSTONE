@@ -62,7 +62,7 @@ const Waves = (props) => {
 
   return (
     <div>
-      <select onChange={handleRegionChange}>
+      <select className="region-dropdown" onChange={handleRegionChange}>
         <option value="Select Region">Select Region</option>
         <option value="Northern California">Northern California</option>
         <option value="San Diego County">San Diego County</option>

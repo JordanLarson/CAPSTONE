@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+.hamburger-nav {
+  color: black;
+  position: fixed;
+  left: 0px;
+  top: 20px;
+}
+
+.hamburger-nav div {
+  width: 32px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 12px;
+  cursor: pointer;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.close-nav {
+  cursor: pointer;
+  color: black;
+  font-size: 30px;
+  /* padding-left: 10px; */
+  margin-top: 0;
+}
+
+.exit:hover {
+  color: #000000;
+}
+
+.mob-nav {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  background-color: #007ea7;
+  border-radius: 10px;
+  width: 20vw;
+  height: 55vh;
+  opacity: 90%;
+}
+.mob-nav a {
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Russo One", sans-serif;
+}
+
+.mob-nav a:hover {
+  color: black;
+}
+@media only screen and (max-width: 768px) {
+  .mob-nav a {
+    font-size: 15px;
+  }
+  .mob-nav {
+    height: 40vh;
+  }
+}

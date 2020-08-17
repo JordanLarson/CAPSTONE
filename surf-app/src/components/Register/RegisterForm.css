@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+html {
+  background-color: lightgray;
+}
+.profile-create-button {
+  background-color: #007ea7;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 24px;
+  width: 200px;
+  height: 60px;
+  font-weight: 100;
+  cursor: pointer;
+  margin-left: 35vw;
+  font-family: "Libre Franklin", sans-serif;
+}
+.profile-create-button:hover {
+  background-color: #003459;
+  color: white;
+  border: 2px solid white;
+}
+.password-container {
+  background-color: #00a8e8;
+  border-radius: 5px;
+  border-color: #003459;
+  height: 20px;
+  width: 20vw;
+  margin-left: 40vw;
+  margin-top: 15px;
+  font-family: "Libre Franklin", sans-serif;
+}
+.username-container {
+  background-color: #00a8e8;
+  border-radius: 5px;
+  border-color: #003459;
+  height: 20px;
+  width: 20vw;
+  margin-left: 40vw;
+  margin-top: 15px;
+  font-family: "Libre Franklin", sans-serif;
+}
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.password-label {
+  margin-top: 10px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 30px;
+  background-color: #007ea7;
+}
+.username-label {
+  margin-top: 20px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 30px;
+  background-color: #00a8e8;
+  border-radius: 15px;
+}
+.create-header {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 30px;
+  border-bottom-width: 10px;
+  border-bottom-color: black;
+}

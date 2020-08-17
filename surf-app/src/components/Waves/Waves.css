@@ -26,3 +26,7 @@ a :hover {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bolder;
 }
+.region-dropdown {
+  width: 200px;
+  margin-top: 40px;
+}

@@ -7,6 +7,7 @@ import Login from "./components/Login/Login";
 import Waves from "./components/Waves/Waves";
 import RegisterForm from "./components/Register/RegisterForm";
 import Messages from "./components/Messages/Messages";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/waves" component={Waves} />
           <Route path="/messages" component={Messages} />
         </Switch>
+        <Footer />
       </>
     </div>
   );

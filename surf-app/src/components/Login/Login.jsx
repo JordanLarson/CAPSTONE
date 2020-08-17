@@ -3,6 +3,7 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import { Link, useHistory } from "react-router-dom";
+import "./Login.css";
 
 export default function Login() {
   const [username, setUsername] = useState("");
