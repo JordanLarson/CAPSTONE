@@ -30,6 +30,9 @@ function Messages(props) {
   const [wavePeriod, setWavePeriod] = useState("");
   const [swellDirection, setSwellDirection] = useState("");
   const [windSpeed, setWindSpeed] = useState("");
+  const [windDirection, setWindDirection] = useState("");
+  const [swellChart, setSwellChart] = useState("");
+  const [windChart, setWindChart] = useState("");
   const [favorite, setFavorite] = useState(false);
   let globalSpotId = 0;
   let globalSender = "";
@@ -38,23 +41,27 @@ function Messages(props) {
     e.preventDefault();
     setFavorite(true);
   };
-  // useEffect(() => {
-  //   const makeApiCall = async () => {
-  //     const urlData = `http://magicseaweed.com/api/66c79af0fe4e3fb73b3915ea2ef63999/forecast/?spot_id=291`;
-  //     const res = await fetch(urlData);
-  //     const data = await res.json();
-  //     console.log(data[0]);
-  //     setMaxWaveHeight(data[0].swell.absMaxBreakingHeight);
-  //     setMinWaveHeight(data[0].swell.absMinBreakingHeight);
-  //     setWaterTemp(data[0].condition.temperature);
-  //     setSolidRating(data[0].solidRating);
-  //     setWaveHeight(data[0].swell.components.combined.height);
-  //     setWavePeriod(data[0].swell.components.combined.period);
-  //     setSwellDirection(data[0].swell.components.combined.compassDirection);
-  //     setWindSpeed(data[0].wind.speed);
-  //   };
-  //   makeApiCall();
-  // }, []);
+  useEffect(() => {
+    const makeApiCall = async () => {
+      const response = await axios(
+        `${apiUrl}/spots/${props.location.pathname.split("/")[2]}`
+      );
+      setMaxWaveHeight(response.data.report.swell.maxBreakingHeight);
+      setMinWaveHeight(response.data.report.swell.minBreakingHeight);
+      setWaterTemp(response.data.report.condition.temperature);
+      setSolidRating(response.data.report.solidRating);
+      setWaveHeight(response.data.report.swell.components.combined.height);
+      setWavePeriod(response.data.report.swell.components.combined.period);
+      setSwellDirection(
+        response.data.report.swell.components.combined.compassDirection
+      );
+      setWindSpeed(response.data.report.wind.speed);
+      setWindDirection(response.data.report.wind.compassDirection);
+      setSwellChart(response.data.report.charts.swell);
+      setWindChart(response.data.report.charts.wind);
+    };
+    makeApiCall();
+  }, []);
 
   useEffect(() => {
     globalSpotId = props.location.pathname.split("/")[2];
@@ -125,9 +132,23 @@ function Messages(props) {
   const { classes } = props;
   return (
     <div className="message-card">
-      <h1 className="chat-log-title">Post On Feed</h1>
+      <div>
+        <h4>Wave Statistics</h4>
+        <p>Maximum wave height: {maxWaveHeight} feet</p>
+        <p>Minimum Wave Height: {minWaveHeight} feet</p>
+        <p>
+          Swell: {waveHeight} feet at {wavePeriod} seconds - {swellDirection}
+        </p>
+        <p>Current Water Temp: {waterTemp} farhenheit</p>
+        <p>
+          Wind Speed/Direction: {windSpeed} - {windDirection}
+        </p>
+        <p>Solid Rating: {solidRating}/5</p>
+        <img src={swellChart}></img>
+        <img src={windChart}></img>
+      </div>
 
-      <div className="render-chat">{renderChat()}</div>
+      <h1 className="chat-log-title">Post On Feed</h1>
       <form onSubmit={onMessageSubmit} className="message-form-ctn">
         <div className="textfield-ctn">
           <TextField
@@ -144,19 +165,9 @@ function Messages(props) {
             // }}
           />
         </div>
-        <div>
-          <h4>Wave Statistics</h4>
-          <p>Maximum wave height: {maxWaveHeight} feet</p>
-          <p>Minimum Wave Height: {minWaveHeight} feet</p>
-          <p>
-            Swell: {waveHeight} feet at {wavePeriod} seconds -{swellDirection}
-          </p>
-          <p>Current Water Temp: {waterTemp} farhenheit</p>
-          <p>Wind Speed/Direction: {windSpeed}</p>
-          <p>Solid Rating: {solidRating}/5</p>
-        </div>
         <button className="postButton">Post</button>
       </form>
+      <div className="render-chat">{renderChat()}</div>
     </div>
   );
 }
