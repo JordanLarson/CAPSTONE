@@ -8,6 +8,7 @@ import Waves from "./components/Waves/Waves";
 import RegisterForm from "./components/Register/RegisterForm";
 import Messages from "./components/Messages/Messages";
 import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/register" component={RegisterForm} />
           <Route path="/waves" component={Waves} />
           <Route path="/messages" component={Messages} />
+          <Route path="/about" component={About} />
         </Switch>
         <Footer />
       </>

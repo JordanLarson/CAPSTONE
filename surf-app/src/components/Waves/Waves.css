@@ -29,7 +29,8 @@ a :hover {
 .region-dropdown {
   width: 200px;
   margin-top: 40px;
-  background-color: #00a8e8;
+  background-color: #003459;
+  color: white;
   border-radius: 10px;
 }
 .wave-component-header {

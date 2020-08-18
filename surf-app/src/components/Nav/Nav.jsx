@@ -28,6 +28,9 @@ const Nav = () => {
               <Link className="waves-link" to="/waves">
                 LOCATIONS
               </Link>
+              <Link className="about-link" to="/about">
+                ABOUT
+              </Link>
             </div>
           ) : (
             <MobileNav handleNav={handleNav} open={open} />
