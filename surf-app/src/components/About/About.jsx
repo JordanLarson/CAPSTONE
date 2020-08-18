@@ -1,9 +1,11 @@
 import React from "react";
+import "./About.css";
 
 const About = () => {
   return (
     <div>
-      <p>
+      <h1 className="about-header">ABOUT US</h1>
+      <p className="about-paragraph">
         TrueSurf was designed to create an interface for surfers to connect and
         find a location that fits their specific criteria. Surfing has long been
         an exclusive sport, but the times have changed and its due time that the

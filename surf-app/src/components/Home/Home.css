@@ -5,12 +5,6 @@
   color: #00171f;
   border-bottom: 10px #00171f;
 }
-.login-ptag {
-  font-family: "Libre Franklin", sans-serif;
-  font-weight: bold;
-  color: #00171f;
-  margin-right: 10px;
-}
 @media only screen and (max-width: 768px) {
   .home-header {
     font-size: 20px;

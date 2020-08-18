@@ -21,7 +21,7 @@ html {
   border: 2px solid white;
 }
 .password-container {
-  background-color: #00a8e8;
+  background-color: white;
   border-radius: 5px;
   border-color: #003459;
   height: 20px;
@@ -31,7 +31,7 @@ html {
   font-family: "Libre Franklin", sans-serif;
 }
 .username-container {
-  background-color: #00a8e8;
+  background-color: white;
   border-radius: 5px;
   border-color: #003459;
   height: 20px;
@@ -50,12 +50,13 @@ html {
   font-family: "Libre Franklin", sans-serif;
   font-size: 30px;
   background-color: #007ea7;
+  border-radius: 15px;
 }
 .username-label {
   margin-top: 20px;
   font-family: "Libre Franklin", sans-serif;
   font-size: 30px;
-  background-color: #00a8e8;
+  background-color: #007ea7;
   border-radius: 15px;
 }
 .create-header {

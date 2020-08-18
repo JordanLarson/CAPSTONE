@@ -1,0 +1,11 @@
+.about-header {
+  font-family: "Russo One", sans-serif;
+  background-color: #003459;
+  height: 15vh;
+  padding-top: 30px;
+  color: white;
+}
+.about-paragraph {
+  font-family: "Libre Franklin", sans-serif;
+  margin: 40px;
+}

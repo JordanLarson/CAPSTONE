@@ -30,6 +30,7 @@ export default function Login() {
 
   return (
     <div className="Login">
+      <h3 className="login-log-header">LOGIN TO YOUR ACCOUNT</h3>
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="username" bsSize="large">
           <FormLabel className="login-label">Username</FormLabel>
