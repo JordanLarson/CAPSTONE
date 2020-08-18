@@ -14,7 +14,7 @@ const MobileNav = ({ open, handleNav }) => {
       <Link className="login-mob" to="/login" onClick={handleNav}>
         LOGIN
       </Link>
-      <Link className="home-mob" to="/home" onClick={handleNav}>
+      <Link className="home-mob" to="/" onClick={handleNav}>
         HOME
       </Link>
       <Link className="waves-mob" to="/waves" onClick={handleNav}>

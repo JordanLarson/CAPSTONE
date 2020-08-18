@@ -22,7 +22,7 @@ const Nav = () => {
               <Link className="login-link" to="/login">
                 LOGIN
               </Link>
-              <Link className="home-link" to="/home">
+              <Link className="home-link" to="/">
                 HOME
               </Link>
               <Link className="waves-link" to="/waves">
