@@ -4,21 +4,23 @@
   flex-direction: row;
   justify-content: space-evenly;
   text-decoration: none;
-  color: #00171f;
-  font-size: 30px;
-  background-color: #007ea7;
+  color: white;
+  font-size: 20px;
+  background-color: #003459;
+  padding-top: 30px;
+  height: 60px;
 }
 .main-nav a:hover {
   color: #00a8e8;
 }
 .login-link {
   text-decoration: none;
-  color: #00171f;
+  color: white;
   font-family: "Russo One", sans-serif;
 }
 .favorites-link {
   text-decoration: none;
-  color: #00171f;
+  color: white;
   font-family: "Russo One", sans-serif;
 }
 .favorites-link a:hover {
@@ -26,7 +28,7 @@
 }
 .home-link {
   text-decoration: none;
-  color: #00171f;
+  color: white;
   font-family: "Russo One", sans-serif;
 }
 .home-link a:hover {
@@ -34,11 +36,11 @@
 }
 .waves-link {
   text-decoration: none;
-  color: #00171f;
+  color: white;
   font-family: "Russo One", sans-serif;
 }
 .about-link {
   text-decoration: none;
-  color: #00171f;
+  color: white;
   font-family: "Russo One", sans-serif;
 }
