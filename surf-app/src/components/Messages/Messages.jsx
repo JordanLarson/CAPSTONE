@@ -115,11 +115,19 @@ function Messages(props) {
   //   });
   // };
 
+  const renderMedia = (message) => {
+    if (message.endsWith(".jpg") || message.endsWith(".gif")) {
+      return <img src={message}></img>;
+    } else {
+      return <span>{message}</span>;
+    }
+  };
+
   const renderChat = () => {
     return chat.map((chatItem, index) => (
       <div key={index}>
         <h3>
-          {chatItem.sender}: <span>{chatItem.message}</span>
+          {chatItem.sender}: {renderMedia(chatItem.message)}
           <button
             onClick={() => axios.delete(`${apiUrl}/feed/${chatItem._id}`)}
           >
