@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
 import "./RegisterForm.css";
@@ -28,6 +28,7 @@ const RegisterForm = (props) => {
         console.log("handlesubmit response is -", res);
         document.cookie = "username=" + res.data.username;
         setUser({ newUserProfile: res.data });
+        window.location = "/waves";
       })
       .catch(console.error);
   };

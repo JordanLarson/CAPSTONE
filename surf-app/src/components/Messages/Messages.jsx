@@ -4,6 +4,7 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import PropTypes from "prop-types";
 import "./Messages.css";
+import { FaTrashAlt } from "react-icons/fa";
 
 const styles = {
   root: {
@@ -19,6 +20,7 @@ function Messages(props) {
   const [sender, setSender] = useState("");
   const [spotId, setSpotId] = useState(0);
   const [surfSpot, setSurfSpot] = useState("");
+  const [isDeleted, setIsDeleted] = useState("");
   console.log("props: " + props);
   const [maxWaveHeight, setMaxWaveHeight] = useState("");
   const [minWaveHeight, setMinWaveHeight] = useState("");
@@ -71,6 +73,7 @@ function Messages(props) {
     try {
       const response = await axios(`${apiUrl}/feed?spotId=${globalSpotId}`);
       console.log(JSON.stringify(response));
+      console.log("message id:", response.data.feed);
       setChat(response.data.feed.reverse());
     } catch (err) {
       console.error(err);
@@ -99,12 +102,22 @@ function Messages(props) {
 
     setState({ message: "", name });
   };
+  // const deleteMessage = async () => {
+  //   const response = await axios({
+  //     url: `${apiUrl}/feed/${chatItem._id}`,
+  //   });
+  // };
 
   const renderChat = () => {
-    return chat.map(({ sender, message }, index) => (
+    return chat.map((chatItem, index) => (
       <div key={index}>
         <h3>
-          {sender}: <span>{message}</span>
+          {chatItem.sender}: <span>{chatItem.message}</span>
+          <button
+            onClick={() => axios.delete(`${apiUrl}/feed/${chatItem._id}`)}
+          >
+            <FaTrashAlt />
+          </button>
         </h3>
       </div>
     ));
