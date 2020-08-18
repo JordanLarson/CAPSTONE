@@ -12,7 +12,7 @@ html {
   height: 60px;
   font-weight: 100;
   cursor: pointer;
-  margin-left: 35vw;
+  margin-left: 32vw;
   font-family: "Libre Franklin", sans-serif;
 }
 .profile-create-button:hover {
@@ -50,14 +50,12 @@ html {
   font-family: "Libre Franklin", sans-serif;
   font-size: 30px;
   background-color: #007ea7;
-  border-radius: 15px;
 }
 .username-label {
   margin-top: 20px;
   font-family: "Libre Franklin", sans-serif;
   font-size: 30px;
   background-color: #007ea7;
-  border-radius: 15px;
 }
 .create-header {
   font-family: "Libre Franklin", sans-serif;

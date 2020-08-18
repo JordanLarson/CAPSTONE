@@ -20,6 +20,9 @@ const MobileNav = ({ open, handleNav }) => {
       <Link className="waves-mob" to="/waves" onClick={handleNav}>
         WAVES
       </Link>
+      <Link className="about-mob" to="/about" onClick={handleNav}>
+        ABOUT
+      </Link>
     </div>
   ) : (
     <div className="hamburger-nav" onClick={handleNav}>

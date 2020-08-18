@@ -40,7 +40,7 @@
   border-radius: 10px;
   width: 20vw;
   height: 55vh;
-  opacity: 90%;
+  opacity: 98%;
 }
 .mob-nav a {
   color: black;
@@ -54,7 +54,7 @@
 }
 @media only screen and (max-width: 768px) {
   .mob-nav a {
-    font-size: 15px;
+    font-size: 12px;
   }
   .mob-nav {
     height: 300px;
