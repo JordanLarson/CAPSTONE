@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&family=Russo+One&display=swap");
 .chat-container {
   background-color: #007ea7;
   padding: 5px 5px;
@@ -9,4 +10,19 @@
   text-decoration: none;
   color: white;
   font-size: 18px;
+}
+img {
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wave-statistics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Libre Franklin", sans-serif;
+}
+.chat-log-title {
+  font-family: "Libre Franklin", sans-serif;
 }

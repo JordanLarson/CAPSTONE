@@ -13,6 +13,10 @@ const Footer = () => {
         <Link className="footer-waves-link" to="/waves">
           Find Surf Nearby
         </Link>
+        |
+        <Link className="footer-fav-link" to="/faves">
+          View Your Favorite Waves
+        </Link>
       </p>
     </footer>
   );

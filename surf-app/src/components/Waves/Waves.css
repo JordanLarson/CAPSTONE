@@ -1,8 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@500&family=Russo+One&display=swap");
-ul > .render-spots {
-  text-decoration: none !important;
+.render-spots {
+  text-decoration: none;
   list-style: none;
   color: black;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+div > a:hover {
+  color: #00a8e8;
+}
+div > a {
+  margin-bottom: 10px;
 }
 a {
   text-decoration: none;
@@ -16,6 +27,7 @@ a :hover {
 .spots-header {
   font-family: "Libre Franklin", sans-serif;
   color: #00171f;
+  margin-bottom: -20px;
 }
 .react-stars {
   display: flex;

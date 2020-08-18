@@ -13,7 +13,7 @@
   margin: 6px 12px;
   cursor: pointer;
   margin-left: 20px;
-  border-radius: 5px;
+  border-radius: 1px;
 }
 
 .close-nav {
@@ -23,6 +23,7 @@
   /* padding-left: 10px; */
   margin-top: 0;
   margin-left: 30px;
+  margin-bottom: 20px;
 }
 
 .exit:hover {
@@ -31,15 +32,15 @@
 
 .mob-nav {
   position: fixed;
-  left: 20px;
-  top: 20px;
+  left: 0px;
+  top: 0px;
   text-align: left;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   background-color: #007ea7;
-  border-radius: 10px;
   width: 20vw;
-  height: 55vh;
+  height: 100vh;
 }
 .mob-nav a {
   color: black;
@@ -47,15 +48,14 @@
   font-size: 20px;
   font-family: "Russo One", sans-serif;
 }
-
 .mob-nav a:hover {
   color: white;
 }
 @media only screen and (max-width: 768px) {
   .mob-nav a {
-    font-size: 12px;
+    font-size: 15px;
   }
   .mob-nav {
-    height: 300px;
+    height: 100vh;
   }
 }

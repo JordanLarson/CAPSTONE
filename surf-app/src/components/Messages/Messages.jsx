@@ -109,12 +109,6 @@ function Messages(props) {
 
     setState({ message: "", name });
   };
-  // const deleteMessage = async () => {
-  //   const response = await axios({
-  //     url: `${apiUrl}/feed/${chatItem._id}`,
-  //   });
-  // };
-
   const renderMedia = (message) => {
     if (message.endsWith(".jpg") || message.endsWith(".gif")) {
       return <img src={message}></img>;
@@ -140,7 +134,7 @@ function Messages(props) {
   const { classes } = props;
   return (
     <div className="message-card">
-      <div>
+      <div className="wave-statistics">
         <h4>Wave Statistics</h4>
         <p>Maximum wave height: {maxWaveHeight} feet</p>
         <p>Minimum Wave Height: {minWaveHeight} feet</p>
@@ -152,7 +146,9 @@ function Messages(props) {
           Wind Speed/Direction: {windSpeed} - {windDirection}
         </p>
         <p>Solid Rating: {solidRating}/5</p>
+        <p>Swell Chart:</p>
         <img src={swellChart}></img>
+        <p>Wind Chart:</p>
         <img src={windChart}></img>
       </div>
 
@@ -167,10 +163,6 @@ function Messages(props) {
             variant="filled"
             label="Message"
             color="secondary"
-            // className={classes.root}
-            // InputProps={{
-            //   className: classes.input,
-            // }}
           />
         </div>
         <button className="postButton">Post</button>
@@ -179,7 +171,5 @@ function Messages(props) {
     </div>
   );
 }
-// Messages.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
+
 export default Messages;

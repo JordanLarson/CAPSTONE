@@ -52,7 +52,7 @@ const RegisterForm = (props) => {
           className="password-container"
           type="text"
           value={input.password}
-          name="password"
+          type="password"
           placeholder="password"
           onChange={handleRegisterChange}
         />
