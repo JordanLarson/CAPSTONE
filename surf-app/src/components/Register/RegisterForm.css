@@ -62,3 +62,5 @@
   border-bottom-width: 10px;
   border-bottom-color: black;
 }
+@media only screen and (max-width: 768px) {
+}
