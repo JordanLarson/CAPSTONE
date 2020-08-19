@@ -20,7 +20,8 @@ const About = () => {
         conditions, users can meet new friends and even spare themselves the
         time and gas of driving out of the way to check a location. It is our
         goal at TrueSurf to build a more open and accepting community for the
-        sport of surfing and those that are just joining the community.
+        sport of surfing as a whole, while providing a more positive environment
+        for those that are just joining the community.
       </p>
     </div>
   );

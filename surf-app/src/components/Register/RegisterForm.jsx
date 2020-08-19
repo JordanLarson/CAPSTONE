@@ -26,7 +26,8 @@ const RegisterForm = (props) => {
     })
       .then((res) => {
         console.log("handlesubmit response is -", res);
-        document.cookie = "username=" + res.data.username;
+        document.cookie = "username=" + res.data.username + ";path=/";
+        document.cookie = "userid=" + res.data._id + ";path=/";
         setUser({ newUserProfile: res.data });
         history.push("/waves");
       })

@@ -4,7 +4,7 @@ import axios from "axios";
 import apiUrl from "../apiConfig";
 import PropTypes from "prop-types";
 import "./Messages.css";
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt, FaHeart } from "react-icons/fa";
 
 const styles = {
   root: {
@@ -18,6 +18,7 @@ function Messages(props) {
   const [state, setState] = useState({ message: "", username: "" });
   const [chat, setChat] = useState([]);
   const [sender, setSender] = useState("");
+  const [senderId, setSenderId] = useState("");
   const [spotId, setSpotId] = useState(0);
   const [surfSpot, setSurfSpot] = useState("");
   const [isDeleted, setIsDeleted] = useState("");
@@ -34,18 +35,29 @@ function Messages(props) {
   const [swellChart, setSwellChart] = useState("");
   const [windChart, setWindChart] = useState("");
   const [favorite, setFavorite] = useState(false);
+  const [favoriteButtonImg, setFavoriteButtonImg] = useState(
+    "https://img.icons8.com/material-outlined/100/000000/like.png"
+  );
   let globalSpotId = 0;
   let globalSender = "";
+  let globalSenderId = 0;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFavorite(true);
-  };
   useEffect(() => {
+    const cookies = document.cookie.split("; ");
+
+    globalSpotId = props.location.pathname.split("/")[2];
+    globalSender = cookies
+      .filter((cookie) => cookie.startsWith("username"))[0]
+      .split("=")[1];
+    globalSenderId = cookies
+      .filter((cookie) => cookie.startsWith("userid"))[0]
+      .split("=")[1];
+    setSpotId(globalSpotId);
+    setSender(globalSender);
+    setSenderId(globalSenderId);
+
     const makeApiCall = async () => {
-      const response = await axios(
-        `${apiUrl}/spots/${props.location.pathname.split("/")[2]}`
-      );
+      const response = await axios(`${apiUrl}/spots/${globalSpotId}`);
       setMaxWaveHeight(response.data.report.swell.maxBreakingHeight);
       setMinWaveHeight(response.data.report.swell.minBreakingHeight);
       setWaterTemp(response.data.report.condition.temperature);
@@ -59,15 +71,20 @@ function Messages(props) {
       setWindDirection(response.data.report.wind.compassDirection);
       setSwellChart(response.data.report.charts.swell);
       setWindChart(response.data.report.charts.wind);
+
+      const userResponse = await axios(`${apiUrl}/users/${globalSenderId}`);
+      const userFavorites = userResponse.data.user.favorites;
+
+      console.log("just before if check");
+      if (userFavorites.includes(parseInt(globalSpotId))) {
+        console.log("about to set the favorite state to true");
+        setFavorite(true);
+        setFavoriteButtonImg(
+          "https://img.icons8.com/material-rounded/100/000000/like.png"
+        );
+      }
     };
     makeApiCall();
-  }, []);
-
-  useEffect(() => {
-    globalSpotId = props.location.pathname.split("/")[2];
-    globalSender = document.cookie.split("=")[1];
-    setSpotId(globalSpotId);
-    setSender(globalSender);
 
     const interval = setInterval(() => getNewMessages(spotId), 1000);
 
@@ -119,8 +136,8 @@ function Messages(props) {
 
   const renderChat = () => {
     return chat.map((chatItem, index) => (
-      <div key={index}>
-        <h3>
+      <div className="render-chat-div" key={index}>
+        <h3 className="chat-log-container">
           {chatItem.sender}: {renderMedia(chatItem.message)}
           <button
             className="fa-trash-button"
@@ -132,17 +149,42 @@ function Messages(props) {
       </div>
     ));
   };
+
+  const handleFavorite = async (e) => {
+    e.preventDefault();
+
+    const response = await axios(`${apiUrl}/users/${senderId}`);
+    const user = response.data.user;
+
+    if (!user.favorites.includes(parseInt(spotId))) {
+      setFavoriteButtonImg(
+        "https://img.icons8.com/material-rounded/100/000000/like.png"
+      );
+      user.favorites.push(spotId);
+      const putResponse = await axios.put(`${apiUrl}/users/${senderId}`, user);
+    } else {
+      setFavoriteButtonImg(
+        "https://img.icons8.com/material-outlined/100/000000/like.png"
+      );
+      const index = user.favorites.indexOf(parseInt(spotId));
+      user.favorites.splice(index, 1);
+      const putResponse = await axios.put(`${apiUrl}/users/${senderId}`, user);
+    }
+  };
+
   const { classes } = props;
   return (
     <div className="message-card">
+      <img src={favoriteButtonImg} onClick={handleFavorite}></img>
       <div className="wave-statistics">
         <h4>Wave Statistics</h4>
         <p>Maximum wave height: {maxWaveHeight} feet</p>
         <p>Minimum Wave Height: {minWaveHeight} feet</p>
         <p>
-          Swell: {waveHeight} feet at {wavePeriod} seconds - {swellDirection}
+          Swell: {waveHeight} feet at {wavePeriod} seconds
         </p>
-        <p>Current Water Temp: {waterTemp} farhenheit</p>
+        <p>Swell Direction: {swellDirection}</p>
+        <p>Current Water Temp: {waterTemp} degrees farhenheit</p>
         <p>
           Wind Speed/Direction: {windSpeed} - {windDirection}
         </p>
@@ -155,18 +197,19 @@ function Messages(props) {
 
       <h1 className="chat-log-title">Post On Feed</h1>
       <form onSubmit={onMessageSubmit} className="message-form-ctn">
-        <div className="textfield-ctn">
+        <div className="textfield-container">
           <TextField
+            className="textfield-container"
             name="message"
             onChange={(e) => onTextChange(e)}
             value={state.message}
             id="filled-secondary"
             variant="filled"
             label="Message"
-            color="secondary"
+            color="#00a8e8"
           />
         </div>
-        <button className="postButton">Post</button>
+        <button className="chat-post-button">Post To Feed</button>
       </form>
       <div className="render-chat">{renderChat()}</div>
     </div>

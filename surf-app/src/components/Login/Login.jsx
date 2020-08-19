@@ -22,7 +22,8 @@ export default function Login() {
       const response = await axios(
         `${apiUrl}/users/login?username=${username}&password=${password}`
       );
-      document.cookie = "username=" + response.data.username;
+      document.cookie = "username=" + response.data.username + ";path=/";
+      document.cookie = "userid" + response.data._id + ";path=/";
     };
     makeAPICall();
     history.push("/favorites");

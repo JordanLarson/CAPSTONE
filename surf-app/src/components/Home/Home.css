@@ -2,7 +2,8 @@
 .home-header {
   margin-top: 40px;
   font-family: "Russo One", sans-serif;
-  color: #00171f;
+  background-color: #003459;
+  color: white;
   border-bottom: 10px #00171f;
 }
 @media only screen and (max-width: 768px) {
