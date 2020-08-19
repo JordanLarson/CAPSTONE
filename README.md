@@ -8,6 +8,8 @@ front-end link: https://github.com/JordanLarson/CAPSTONE
 
 back-end link: https://github.com/JordanLarson/CAPSTONE_backend/edit/master/README.md
 
+live site link: https://keen-hypatia-e7cb8d.netlify.app
+
 ## Project Description
 
 A social media/ Surf forecast application that allows users to post on a feed with video, audio or text.
@@ -36,39 +38,37 @@ Backend: https://www.figma.com/file/QXDLS0peQOEXJ9zLrfTUvj/Untitled?node-id=0%3A
 
 | BackEnd                          | Priority | Estimated Time | Time Invetsted | Actual Time |
 | -------------------------------- | :------: | :------------: | :------------: | :---------: |
-| User Schema                      |    H     |       1        |                |             |
-| Wave details Schema              |    H     |       1        |                |             |
-| Message Schema                   |    H     |       1        |                |             |
-| Create dummy accounts            |    H     |       4        |                |             |
-| Dummy account Seed Data          |    H     |       2        |                |             |
-| Dummy account Routes/Controllers |    H     |       5        |                |             |
-| User/Dummy Server set up         |    H     |       1        |                |             |
-| Surf API database construction   |    H     |       3        |                |             |
-| Message Routes/Controllers       |    H     |       4        |                |             |
-| Message Server set up            |    H     |       1        |                |             |
-| Message Server                   |    H     |       2        |                |             |
-| Research info on video upload    |    H     |       2        |                |             |
-| Deploy backend database          |    H     |       3        |                |             |
-| Total                            |    H     |       34       |                |             |
+| User Schema                      |    H     |       1        |       2        |      2      |
+| Wave details Schema              |    H     |       1        |       2        |      2      |
+| Message Schema                   |    H     |       1        |       1        |      1      |
+| Dummy account Seed Data          |    H     |       2        |       4        |      4      |
+| Dummy account Routes/Controllers |    H     |       5        |       4        |      4      |
+| User/Dummy Server set up         |    H     |       1        |       1        |      1      |
+| Surf API database construction   |    H     |       3        |       5        |      5      |
+| Message Routes/Controllers       |    H     |       4        |       3        |      3      |
+| Message Server set up            |    H     |       1        |       2        |      2      |
+| Research info on video upload    |    H     |       2        |       0        |      0      |
+| Deploy backend database          |    H     |       3        |       1        |      1      |
+| Research axios calls backend     |    H     |       10       |       10       |      10     |
+| Total                            |    H     |       34       |                |      35     |
 
 | React/Front End                         | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --------------------------------------- | :------: | :------------: | :------------: | :---------: |
-| Navbar & Footer                         |    H     |       2        |                |             |
-| React Router                            |    H     |       4        |                |             |
-| Home Page                               |    H     |       1        |                |             |
-| Login Page.                             |    H     |       4        |                |             |
-| Favorites page with your favorite waves |    H     |       5        |                |             |
-| Page with breaks in your local area     |    H     |       2        |                |             |
-| Messaging component                     |    H     |       4        |                |             |
-| Your Profile Page -Edit info form       |    H     |       2        |                |             |
-| Current Conversations Page              |    M     |       6        |                |             |
-| Edit page for your surf spots           |    M     |       3        |                |             |
-| Social/ Surf Feed Page                  |    M     |       6        |                |             |
-| About Page                              |    H     |       2        |                |             |
-| Responsive Design                       |    H     |       6        |                |             |
-| CSS/ Styling                            |    H     |       8        |                |             |
-| Total                                   |    H     |       54       |                |             |
+| Navbar & Footer                         |    H     |       2        |       3        |      3      |
+| React Router                            |    H     |       4        |       3        |      3      |
+| Home Page                               |    H     |       1        |       1        |      1      |
+| Login Page.                             |    H     |       4        |       5        |      5      |
+| Favorites page with your favorite waves |    H     |       5        |       6        |      6      |
+| Page with breaks in your local area     |    H     |       2        |       3        |      3      |
+| Messaging component                     |    H     |       4        |       5        |      5      |
+| Current Feed Page                       |    M     |       6        |       2        |      2      |
+| About Page                              |    H     |       2        |       2        |      2      |
+| Responsive Design                       |    H     |       6        |       6        |      6      |
+| CSS/ Styling                            |    H     |       8        |       4        |      4      |
+| Total                                   |    H     |       44       |                |      40      |
 
+
+# Total Time spent = 75 hours
 # Components
 
 | Component             |                         Description                          |
@@ -111,5 +111,14 @@ Cors
 MongoDB
 
 # Code Snippet
-
+<pre><code>
+const renderMedia = (message) => {
+    if (message.endsWith(".jpg") || message.endsWith(".gif")) {
+      return <img src={message}></img>;
+    } else {
+      return <span className="message-render-span">{message}</span>;
+    }
+  };
+</pre></code>
 # Bugs & Fixes:
+
