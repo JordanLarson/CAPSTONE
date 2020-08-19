@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <p>
+      <p className="footer-p-tag">
         © 2020 TrueSurf |{" "}
         <Link className="footer-login-link" to="/login">
           Login{" "}

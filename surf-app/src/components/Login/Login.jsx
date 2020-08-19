@@ -56,7 +56,7 @@ export default function Login() {
           bsSize="large"
           disabled={!validateForm()}
           type="submit"
-          className="register-button"
+          className="login-button"
         >
           Login
         </Button>

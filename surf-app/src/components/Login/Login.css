@@ -21,7 +21,7 @@
   margin-top: 10px;
   font-weight: 100;
   cursor: pointer;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   font-family: "Libre Franklin", sans-serif;
 }
 .register-button:hover {
@@ -38,7 +38,7 @@
   font-weight: bold;
   color: #00171f;
   margin-right: 30px;
-  margin-top: -60px;
+  margin-top: -70px;
 }
 .login-log-header {
   font-family: "Russo One", sans-serif;
@@ -46,4 +46,18 @@
   padding-top: 10px;
   height: 10vh;
   color: white;
+}
+.login-button {
+  background-color: #003459;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  width: 20vw;
+  height: 10vh;
+  margin-top: 10px;
+  font-weight: 100;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-family: "Libre Franklin", sans-serif;
 }
