@@ -62,6 +62,8 @@ const Waves = (props) => {
 
   return (
     <div>
+      <img src="https://iili.io/dO8Dhu.png" alt="dO8Dhu.png" border="0" />
+
       <h4 className="wave-component-header">
         SEARCH FOR <br></br>YOUR OPTIMAL LOCATION
       </h4>

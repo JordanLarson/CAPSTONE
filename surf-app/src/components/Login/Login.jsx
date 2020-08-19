@@ -30,6 +30,9 @@ export default function Login() {
 
   return (
     <div className="Login">
+      <Link to="/">
+        <img src="https://iili.io/dO8Dhu.png" alt="dO8Dhu.png" border="0" />
+      </Link>
       <h3 className="login-log-header">LOGIN TO YOUR ACCOUNT</h3>
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="username" bsSize="large">

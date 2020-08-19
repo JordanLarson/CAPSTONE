@@ -35,6 +35,7 @@ const RegisterForm = (props) => {
   return (
     <>
       <div>
+        <img src="https://iili.io/dO8Dhu.png" alt="dO8Dhu.png" border="0" />
         <h3 className="create-header">Create An Account</h3>
       </div>
       <form onSubmit={handleSubmit} className="registration-form">
@@ -50,9 +51,9 @@ const RegisterForm = (props) => {
         <label className="password-label"> Create a Password</label>
         <input
           className="password-container"
-          type="text"
-          value={input.password}
           type="password"
+          value={input.password}
+          name="password"
           placeholder="password"
           onChange={handleRegisterChange}
         />

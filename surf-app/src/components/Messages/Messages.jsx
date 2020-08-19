@@ -123,6 +123,7 @@ function Messages(props) {
         <h3>
           {chatItem.sender}: {renderMedia(chatItem.message)}
           <button
+            className="fa-trash-button"
             onClick={() => axios.delete(`${apiUrl}/feed/${chatItem._id}`)}
           >
             <FaTrashAlt />

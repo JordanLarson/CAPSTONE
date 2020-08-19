@@ -27,6 +27,9 @@
 .register-button:hover {
   background-color: #007ea7;
 }
+.login-button:hover {
+  background-color: #007ea7;
+}
 .login-label {
   font-family: "Libre Franklin", sans-serif;
   font-weight: bold;

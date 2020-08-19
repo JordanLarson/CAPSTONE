@@ -5,6 +5,9 @@
   border-radius: 25px;
   grid-column: 3;
 }
+html {
+  background-color: lightgray;
+}
 
 .chat-container a {
   text-decoration: none;
@@ -25,4 +28,19 @@ img {
 }
 .chat-log-title {
   font-family: "Libre Franklin", sans-serif;
+}
+.render-chat {
+  font-family: "Libre Franklin", sans-serif;
+  margin-bottom: 40px;
+}
+.fa-trash-button {
+  margin-left: 20px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+}
+.fa-trash-button:hover {
+  background-color: #00a8e8;
 }

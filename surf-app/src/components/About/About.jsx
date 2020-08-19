@@ -1,9 +1,13 @@
 import React from "react";
 import "./About.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <div>
+      <Link to="/">
+        <img src="https://iili.io/dO8Dhu.png" alt="dO8Dhu.png" border="0" />
+      </Link>
       <h1 className="about-header">ABOUT US</h1>
       <p className="about-paragraph">
         TrueSurf was designed to create an interface for surfers to connect and
