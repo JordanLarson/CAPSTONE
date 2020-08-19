@@ -1,7 +1,7 @@
 .about-header {
   font-family: "Russo One", sans-serif;
   background-color: #003459;
-  height: 15vh;
+  height: 10vh;
   padding-top: 30px;
   color: white;
 }
@@ -9,4 +9,13 @@
   font-family: "Libre Franklin", sans-serif;
   margin-left: 150px;
   margin-right: 150px;
+  font-size: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .about-paragraph {
+    font-size: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 50px;
+  }
 }
