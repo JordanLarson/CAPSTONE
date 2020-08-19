@@ -64,3 +64,22 @@
   margin-bottom: 30px;
   font-family: "Libre Franklin", sans-serif;
 }
+@media only screen and (max-width: 400px) {
+  .login-log-header {
+    font-size: 12px;
+  }
+  .login-button {
+    font-size: 12px;
+    height: 30px;
+  }
+  .register-button {
+    font-size: 12px;
+  }
+  .create-profile-ptag {
+    font-size: 12px;
+  }
+  .login-label {
+    font-size: 12px;
+    padding-left: 70px;
+  }
+}

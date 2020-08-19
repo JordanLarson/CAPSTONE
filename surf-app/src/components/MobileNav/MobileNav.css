@@ -57,5 +57,15 @@
   }
   .mob-nav {
     height: 100vh;
+    width: 24vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .mob-nav a {
+    font-size: 10px;
+  }
+  .mob-nav {
+    height: 100vh;
+    width: 22vw;
   }
 }

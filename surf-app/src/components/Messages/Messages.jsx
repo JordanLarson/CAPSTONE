@@ -130,7 +130,7 @@ function Messages(props) {
     if (message.endsWith(".jpg") || message.endsWith(".gif")) {
       return <img src={message}></img>;
     } else {
-      return <span>{message}</span>;
+      return <span className="message-render-span">{message}</span>;
     }
   };
 

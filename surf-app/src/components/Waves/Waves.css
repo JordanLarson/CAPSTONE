@@ -51,3 +51,22 @@ a :hover {
   background-color: #003459;
   height: 100px;
 }
+@media only screen and (max-width: 400px) {
+  .wave-component-header {
+    font-size: 12px;
+    height: 30px;
+  }
+  .region-dropdown {
+    font-size: 12px;
+    width: 30vw;
+  }
+  .spots-header {
+    font-size: 12px;
+  }
+  .wave-height-slider {
+    font-size: 11px;
+  }
+  .render-spots {
+    font-size: 9px;
+  }
+}

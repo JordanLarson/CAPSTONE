@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import apiUrl from "../apiConfig";
+import "./Favorites.css";
 
 const Favorites = (props) => {
   const [favoriteSpot, setFavoriteSpot] = useState({});
@@ -63,7 +64,7 @@ const Favorites = (props) => {
 
   return (
     <div>
-      <h2 className="favorites-header">Favorites</h2>
+      <h2 className="favorites-header">Your Favorite Surf Breaks</h2>
       <select className="region-dropdown" onChange={handleRegionChange}>
         <option value="Select Region">Select Region</option>
         <option value="Northern California">Northern California</option>

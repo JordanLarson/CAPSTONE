@@ -12,6 +12,14 @@
   margin-left: 38vw;
   font-family: "Libre Franklin", sans-serif;
 }
+.create-header {
+  color: white;
+  background-color: #003459;
+  font-family: "Russo One", sans-serif;
+  font-size: 30px;
+  padding-top: 15px;
+  height: 60px;
+}
 .profile-create-button:hover {
   background-color: #007ea7;
   color: white;
@@ -44,23 +52,21 @@
 }
 .password-label {
   margin-top: 10px;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 30px;
   background-color: #003459;
+  padding-top: 15px;
+  height: 40px;
   color: white;
 }
 .username-label {
   margin-top: 20px;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "Russo One", sans-serif;
   font-size: 30px;
   background-color: #003459;
+  padding-top: 15px;
+  height: 40px;
   color: white;
-}
-.create-header {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 30px;
-  border-bottom-width: 10px;
-  border-bottom-color: black;
 }
 @media only screen and (max-width: 768px) {
   .profile-create-button {
@@ -68,5 +74,37 @@
     font-size: 20px;
     margin-top: -20px;
     margin-left: 40vw;
+  }
+  .username-label {
+    font-size: 20px;
+    height: 30px;
+  }
+  .password-label {
+    font-size: 20px;
+    height: 30px;
+  }
+  .create-header {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .profile-create-button {
+    width: 80px;
+    height: 33px;
+    font-size: 12px;
+  }
+  .password-container {
+    margin-bottom: 0px;
+  }
+  .username-label {
+    font-size: 15px;
+    height: 25px;
+  }
+  .password-label {
+    font-size: 15px;
+    height: 25px;
+  }
+  .create-header {
+    font-size: 15px;
   }
 }

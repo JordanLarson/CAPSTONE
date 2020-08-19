@@ -13,9 +13,17 @@
 }
 @media only screen and (max-width: 768px) {
   .about-paragraph {
-    font-size: 18px;
-    margin-left: 50px;
-    margin-right: 50px;
+    font-size: 15px;
+    margin-left: 120px;
+    margin-right: 120px;
     padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .about-paragraph {
+    font-size: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
   }
 }

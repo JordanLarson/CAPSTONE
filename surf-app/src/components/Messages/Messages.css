@@ -63,3 +63,19 @@ img {
 .chat-log-container {
   color: #003459;
 }
+@media only screen and (max-width: 400px) {
+  .wave-statistics {
+    font-size: 10px;
+    padding-left: 24px;
+  }
+  .render-chat {
+    font-size: 12px;
+  }
+  .chat-post-button {
+    font-size: 12px;
+    width: 80px;
+  }
+  .chat-log-container {
+    font-size: 12px;
+  }
+}
